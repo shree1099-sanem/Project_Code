@@ -49,7 +49,7 @@ def tcs_chatbot_api():
     
     #step 6 : pass prompt to any free LLMs (openai,gemini,huggingface)
    
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = ""
 
     client = OpenAI()
 
@@ -68,4 +68,5 @@ app.run()
          
     
    
+
 
