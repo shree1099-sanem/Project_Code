@@ -90,4 +90,5 @@ def job_detail(job_id):
     return render_template('job_detail.html', job=job, bids=bids)
 
 if __name__ == '__main__':
+
     app.run(debug=True)
