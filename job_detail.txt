@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Details</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+  <h2>Job Details</h2>
+  <p><strong>Description:</strong> {{ job[2] }}</p>
+  <p><strong>Requirements:</strong> {{ job[3] }}</p>
+  <p><strong>Expires At:</strong> {{ job[5] }}</p>
+
+  <h3 class="mt-4">Bids</h3>
+  <ul class="list-group">
+    {% for bid in bids %}
+      <li class="list-group-item">
+        {{ bid[1] }} bid ₹{{ bid[2] }} on {{ bid[3] }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h4 class="mt-4">Submit Your Bid</h4>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Your Name</label>
+      <input name="bidder_name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Bid Amount (₹)</label>
+      <input name="amount" type="number" step="0.01" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Place Bid</button>
+  </form>
+</body>
+</html>
